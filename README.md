@@ -1,75 +1,99 @@
-```markdown
 # Pulse HR – Employee Skill Matrix
 
-**Candidate:** Hitesh Suthar  
-**Assessment:** MERN Stack Developer Technical Assessment  
+**Candidate:** Hitesh Suthar
+**Assessment:** MERN Stack Developer Technical Assessment
 **Stack:** MERN (MongoDB, Express, React 19, Node.js) + TypeScript + Docker
 
 ---
 
 # Project Overview
 
-Pulse HR is an internal HR dashboard that allows organizations to maintain a **Skill Matrix of employees**.  
-The application helps HR teams quickly identify internal talent based on:
+**Pulse HR** is an internal **Employee Skill Matrix dashboard** designed to help HR teams track and analyze employee capabilities across an organization.
 
-- Department
-- Primary technical skill
-- Experience level
+The system allows HR managers to:
 
-The system allows HR executives to:
+* Maintain a centralized employee database
+* Identify employees by **department**
+* Track **primary technical skills**
+* Categorize employees by **experience level**
 
-- Register employees
-- View employee list
-- Filter employees by department
+This makes it easier to understand **internal talent distribution** and support better resource allocation within engineering teams.
 
 ---
 
-# Tech Stack
+# 🎬 Project Video Preview
+
+A short demonstration of the application is included below.
+
+`ProjectPreview.mov`
+
+This video showcases:
+
+* Employee registration
+* Employee listing
+* Department-based filtering
+* Dashboard UI interaction
+
+---
+
+# Key Features
+
+* Employee registration form
+* Dynamic employee listing
+* Department-based filtering
+* Clean HR dashboard interface
+* Type-safe frontend and backend
+* MVC backend architecture
+* Dockerized environment
+* MongoDB database persistence
+
+---
+
+# Technology Stack
 
 ## Backend
-- Node.js
-- Express.js
-- TypeScript
-- MongoDB
-- Mongoose
-- MVC Architecture
+
+* Node.js
+* Express.js
+* TypeScript
+* MongoDB
+* Mongoose
+* MVC Architecture
 
 ## Frontend
-- React 19
-- TypeScript
-- TailwindCSS
-- Context API (state management)
+
+* React 19
+* TypeScript
+* TailwindCSS
+* Context API (state management)
 
 ## DevOps
-- Docker
-- Docker Compose
+
+* Docker
+* Docker Compose
+* Container networking
 
 ---
 
 # Important Note About Port 5000 (macOS)
 
-In recent versions of **macOS (Monterey, Ventura, Sonoma, etc.)**, **port 5000 is commonly used by the system service called _AirPlay Receiver_**.
+In recent versions of **macOS (Monterey, Ventura, Sonoma, etc.)**, **port 5000 is commonly used by a system service called *AirPlay Receiver***.
 
-Because of this, port **5000 may already be occupied**, which causes Docker containers or Node servers to fail during startup.
+Because of this, port **5000 may already be occupied**, which can prevent Docker containers or Node.js servers from starting properly.
 
-To avoid this conflict, this project uses:
-
-```
+To avoid this issue, this project uses:
 
 Backend Port: 3000
 Frontend Port: 5173
 MongoDB Port: 27017
 
-```
-
-This ensures the application runs without port conflicts on macOS.
+This ensures the application runs smoothly without port conflicts on macOS systems.
 
 ---
 
 # Project Architecture
 
 ```
-
 pulse-hr-skill-matrix
 │
 ├── client/                 # React frontend
@@ -93,7 +117,7 @@ pulse-hr-skill-matrix
 │   │
 │   └── Dockerfile
 │
-├── server/                 # Node backend
+├── server/                 # Node.js backend
 │   ├── src/
 │   │   ├── config/
 │   │   │   └── db.ts
@@ -117,7 +141,6 @@ pulse-hr-skill-matrix
 │
 ├── docker-compose.yml
 └── README.md
-
 ```
 
 ---
@@ -126,11 +149,7 @@ pulse-hr-skill-matrix
 
 ## Register Employee
 
-```
-
 POST /api/employees
-
-````
 
 ### Request Body
 
@@ -141,25 +160,23 @@ POST /api/employees
   "primarySkill": "React",
   "experienceLevel": "Junior"
 }
-````
+```
+
+This endpoint registers a new employee into the skill matrix.
 
 ---
 
 ## Get All Employees
 
-```
 GET /api/employees
-```
 
-Returns the complete list of employees.
+Returns the complete list of employees stored in the database.
 
 ---
 
 ## Filter Employees by Department
 
-```
 POST /api/employees/filter
-```
 
 ### Request Body
 
@@ -168,6 +185,8 @@ POST /api/employees/filter
   "department": "MERN"
 }
 ```
+
+Returns only employees belonging to the specified department.
 
 ---
 
@@ -196,9 +215,15 @@ docker compose build
 docker compose up
 ```
 
+Docker will automatically start:
+
+* MongoDB database
+* Backend API server
+* React frontend application
+
 ---
 
-## Step 4 — Open Application
+## Step 4 — Access the Application
 
 Frontend Dashboard
 
@@ -216,18 +241,18 @@ http://localhost:3000/api/employees
 
 # Docker Architecture
 
-Docker Compose creates **three services**:
+Docker Compose orchestrates **three services**:
 
 ```
-client  → React Application
-backend → Node.js API
-mongo   → MongoDB Database
+client   → React application
+backend  → Node.js API server
+mongo    → MongoDB database
 ```
 
-Internal Docker networking allows containers to communicate using service names:
+Containers communicate internally through Docker networking:
 
 ```
-client → http://backend:3000
+client  → http://backend:3000
 backend → mongodb://mongo:27017
 ```
 
@@ -248,48 +273,30 @@ NODE_ENV=development
 # Features Implemented
 
 * Employee registration
-* Employee listing
-* Department filtering
+* Employee listing dashboard
+* Department filtering system
 * MVC backend architecture
-* TypeScript interfaces (strict typing)
+* TypeScript strict typing
 * Context API state management
-* Executive dashboard UI
+* Executive-style dashboard UI
 * Docker containerization
-* MongoDB persistence
+* MongoDB persistent storage
 
 ---
 
-# Git Commit Discipline
-
-The repository includes multiple commits demonstrating development progress:
-
-```
-init: project setup
-feat: employee schema and model
-feat: employee API endpoints
-feat: department filtering logic
-feat: dashboard UI
-feat: docker configuration
-```
-
----
 
 # Evaluation Criteria Addressed
 
-| Criteria                   | Implementation                          |
-| -------------------------- | --------------------------------------- |
-| Logic & Functionality      | Filtering, employee creation, API logic |
-| TypeScript & Code Quality  | Interfaces, MVC structure               |
-| Docker & Environment Setup | docker-compose networking               |
-| Professionalism            | Clean UI, meaningful commits            |
+| Criteria                   | Implementation                                       |
+| -------------------------- | ---------------------------------------------------- |
+| Logic & Functionality      | Employee CRUD logic and department filtering         |
+| TypeScript & Code Quality  | Interfaces, strict typing, MVC pattern               |
+| Docker & Environment Setup | docker-compose orchestration                         |
+| Professionalism            | Clean UI, structured repository, clear documentation |
 
 ---
 
 # Author
 
 **Hitesh Suthar**
-
 MERN Stack Developer
-
-```
-```
