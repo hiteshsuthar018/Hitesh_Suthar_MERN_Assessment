@@ -7,7 +7,7 @@ import { type Employee } from "../types/employee";
   When running inside Docker the frontend will reach the backend
   using the service name "backend".
 */
-const API_BASE = import.meta.env.API_BASE || "http://backend:3000/api/employees";
+const API_BASE = import.meta.env.API_BASE || "http://localhost:3000/api/employees";
 
 // Fetch all employees
 export const getEmployees = async (): Promise<Employee[]> => {
