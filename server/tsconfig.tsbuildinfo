@@ -1,0 +1,1 @@
+{"root":["./src/app.ts","./src/index.ts","./src/config/db.ts","./src/controllers/employeecontroller.ts","./src/interfaces/employeeinterface.ts","./src/models/employeemodel.ts","./src/routes/employeeroutes.ts"],"version":"5.8.3"}
