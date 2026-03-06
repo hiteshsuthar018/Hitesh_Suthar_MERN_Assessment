@@ -27,6 +27,7 @@ A short demonstration of the application is included below.
 
 `ProjectPreview.mov`
 
+
 This video showcases:
 
 * Employee registration
