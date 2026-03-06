@@ -4,7 +4,6 @@ import "dotenv/config"
 
 // Port can come from environment variables or fallback to 5000
 const PORT: number = Number(process.env.PORT) || 3000;
-console.log(process.env.PORT, "PORT");
 const startServer = async (): Promise<void> => {
   try {
     // establish database connection before accepting requests

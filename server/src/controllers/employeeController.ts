@@ -41,7 +41,6 @@ export const getEmployees = async (
 ): Promise<void> => {
   try {
     const employees = await Employee.find();
-    console.log("get employees" , employees)
     res.status(200).json(employees);
   } catch (error) {
     res.status(500).json({
